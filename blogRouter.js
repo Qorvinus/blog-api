@@ -49,19 +49,21 @@ router.put('/blog-posts/:id', (req, res) => {
       return res.status(400).send(message);
     };
   };
-  if(req.params.id !== req.body.id) {
+
+  //change params to body
+  if(req.body.id !== req.body.id) {
     const message = (
       `Request path id (${req.params.id}) and request body id (${req.body.id}) must match`);
       console.error(message);
       return res.status(400).send(message);
     };
-    console.log(`Updating blog post ${req.params.id}`);
+    console.log(`Updating blog post ${req.body.id}`);
     const updatedPost = BlogPosts.update({
-      id: req.params.id,
-      title: req.params.title,
-      content: req.params.content,
-      author: req.params.author,
-      publishDate: req.params.publishDate
+      id: req.body.id,
+      title: req.body.title,
+      content: req.body.content,
+      author: req.body.author,
+      publishDate: req.body.publishDate
     });
   res.status(204).end();
 });
