@@ -3,7 +3,7 @@
 const chai = require("chai");
 const chaiHttp = require("chai-http");
 
-const {app, runServer, closeServer} = require("../server");
+const { app, runServer, closeServer } = require("../server");
 
 const expect = chai.expect;
 
@@ -37,7 +37,6 @@ describe("Blog Posts", function() {
       title: "New Post",
       content: "Hello World",
       author: "First Last",
-      publishDate: "publishDate"
     };
     return chai
       .request(app)
@@ -47,11 +46,11 @@ describe("Blog Posts", function() {
         expect(res).to.have.status(201);
         expect(res).to.be.json;
         expect(res.body).to.be.a("object");
-        expect(res.body).to.include.keys("id", "title", "content", "author", "publishDate");
+        expect(res.body).to.include.keys("id", "title", "content", "author");
         expect(res.body.id).to.not.equal(null);
-        expect(res.body).to.deep.equal(
-          Object.assign(newItem, { id: res.body.id })
-        );
+        expect(res.body.title).to.equal(newItem.title);
+        expect(res.body.content).to.equal(newItem.content);
+        expect(res.body.author).to.equal(newItem.author);
       });
   });
   it("should update a blog post on PUT", function() {
@@ -77,7 +76,7 @@ describe("Blog Posts", function() {
           expect(res).to.be.json;
           expect(res.body).to.be.a("object");
           expect(res.body).to.deep.equal(updateData)
-        });
+        })
     );
   });
   it("should delete a blog post on DELETE", function() {
