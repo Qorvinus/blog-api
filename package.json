@@ -4,8 +4,8 @@
   "description": "Blog API for CRUD",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "node server.js",
+    "start": "mocha"
   },
   "author": "Xiong Moua",
   "license": "ISC",
