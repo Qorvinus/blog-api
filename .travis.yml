@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: bkyuZ9e/7nsXDHrpJODGGuV4PWWojsnj6BZgZK6upU8KNlAwpEnJ8a/RNOqRH+0mTIICxbgKlUz3WM3+tBeq6TDBU6wD8Hhd74BMR1mF6Hv00h+M0S6JDfnKBPO/gHQwQBw2C6zz0gbHxIoNZPKjx+D+jDTWs93OUG/b6qZN65YaGpmmFnV8gC2p3aPZzzxf0QvnOF+oBiVHUwv9sd6NRKFvlAIBy+XDw++kCz8Yqypk5HW8d2ZeZlPqg2GQvcf6N+UiY8fOIRXJk49ZLpmywubSoZVnpaUkMHbDvdD1pWRsn7dvF6a3/r1wb+WGsCePWpmCsQLRXkrxNdlaNKhjCgXh12A45gHChmjfB3Dnl+nyKM/m8Jxs5ykhTSX+VV+kF6S0taVN7a+EwvgwyRTYL2yeD3Ky2fv30DsR0SuEl7WowZpSe/AB8yAx7ciDo6kFLh09496TUSd0Zx1jl8zLUFEmuWvItCQZHVqLew1kpkC6kkspjMOvi94bOCNpTlxsAAmucyhrxlSVXd5ouaRdlhklOHx+8E/CeYe7hQ28NnUWiy9EsdsnMLzEv4MPYb+6t01+IqnDFpZTJEuur/+IBEaIzDKBVRHlVW7wrfUKhavgyqM3TU/TJ71xcdNpGCZU+ND06sbqaqvQVLUmCYgyBTDkACrUZLa21EwzejIWuM4=
+  app: mighty-everglades-14248
+  on:
+    repo: Qorvinus/blog-api
